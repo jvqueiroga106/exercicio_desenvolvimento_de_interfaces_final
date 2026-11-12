@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EstudaMais – Plataforma de Estudos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#principal">Pular para o conteúdo</a>
+<header>
+  <strong class="brand">📘 EstudaMais</strong>
+  <nav aria-label="Principal">
+    <a href="#login">Login</a><a href="#destaques">Destaques</a><a href="#materias">Matérias</a><a href="#pesquisa">Pesquisa</a><a href="#contato">Contato</a>
+  </nav>
+  <button id="abrirA11y" aria-expanded="false" aria-controls="painelA11y">♿ Acessibilidade</button>
+</header>
+
+<aside id="painelA11y" hidden aria-label="Painel de acessibilidade">
+  <h2>Acessibilidade</h2>
+  <button id="tema">🌙 Alternar modo claro/escuro</button>
+  <div class="linha"><button id="menosFonte" aria-label="Diminuir fonte">A−</button><button id="maisFonte" aria-label="Aumentar fonte">A+</button></div>
+  <button id="contraste" aria-pressed="false">Alto contraste</button>
+  <button id="resetA11y">Restaurar padrão</button>
+</aside>
+
+<main id="principal">
+  <section class="hero">
+    <h1>Estude com foco, no seu ritmo</h1>
+    <p>Resumos, trilhas e exercícios para organizar seus estudos em um só lugar.</p>
+    <a class="btn" href="#materias">Ver matérias</a>
+  </section>
+
+  <section id="login">
+    <h2>Página de Login</h2>
+    <form id="formLogin" novalidate>
+      <label for="email">E-mail</label>
+      <input id="email" type="email" required autocomplete="email">
+      <small id="erroEmail" class="erro" role="alert"></small>
+      <label for="senha">Senha (mín. 6 caracteres)</label>
+      <input id="senha" type="password" required minlength="6" autocomplete="current-password">
+      <small id="erroSenha" class="erro" role="alert"></small>
+      <button class="btn" type="submit">Entrar</button>
+      <p id="msgLogin" role="status"></p>
+    </form>
+  </section>
+
+  <section id="destaques" aria-roledescription="carrossel" aria-label="Destaques">
+    <h2>Destaques (carrossel)</h2>
+    <div class="carrossel">
+      <button id="ant" aria-label="Slide anterior">‹</button>
+      <div class="slides">
+        <figure class="slide ativo"><svg viewBox="0 0 600 220" role="img" aria-label="Ilustração de livros"><rect width="600" height="220" fill="#1d4ed8"/><rect x="180" y="60" width="50" height="110" fill="#fbbf24"/><rect x="240" y="40" width="50" height="130" fill="#fff"/><rect x="300" y="70" width="50" height="100" fill="#93c5fd"/></svg><figcaption>Resumos organizados por matéria</figcaption></figure>
+        <figure class="slide"><svg viewBox="0 0 600 220" role="img" aria-label="Ilustração de gráfico"><rect width="600" height="220" fill="#0f766e"/><polyline points="140,170 240,120 340,140 460,60" fill="none" stroke="#fff" stroke-width="10"/></svg><figcaption>Acompanhe sua evolução</figcaption></figure>
+        <figure class="slide"><svg viewBox="0 0 600 220" role="img" aria-label="Ilustração de relógio"><rect width="600" height="220" fill="#7c2d12"/><circle cx="300" cy="110" r="70" fill="#fff"/><path d="M300 110V65M300 110l35 20" stroke="#7c2d12" stroke-width="8"/></svg><figcaption>Cronograma de estudos com metas</figcaption></figure>
+      </div>
+      <button id="prox" aria-label="Próximo slide">›</button>
+    </div>
+  </section>
+
+  <section id="materias">
+    <h2>Matérias (cartões)</h2>
+    <div class="grade">
+      <article class="card"><h3>Matemática</h3><p>Álgebra, funções e geometria com exemplos resolvidos.</p></article>
+      <article class="card"><h3>Programação</h3><p>Lógica, HTML, CSS e JavaScript para iniciantes.</p></article>
+      <article class="card"><h3>Idiomas</h3><p>Vocabulário e gramática em inglês e espanhol.</p></article>
+    </div>
+  </section>
+
+  <section id="pesquisa">
+    <h2>Pesquisa por abas</h2>
+    <div role="tablist" aria-label="Áreas">
+      <button role="tab" aria-selected="true" data-cat="todos">Todos</button>
+      <button role="tab" aria-selected="false" data-cat="exatas">Exatas</button>
+      <button role="tab" aria-selected="false" data-cat="tecnologia">Tecnologia</button>
+    </div>
+    <label for="busca">Buscar conteúdo</label>
+    <input id="busca" type="search" placeholder="Ex.: funções">
+    <ul id="lista">
+      <li data-cat="exatas">Funções do 1º grau</li><li data-cat="exatas">Geometria plana</li>
+      <li data-cat="tecnologia">Introdução ao HTML</li><li data-cat="tecnologia">Flexbox e Grid</li>
+    </ul>
+    <p id="vazio" hidden>Nenhum resultado encontrado.</p>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <form id="formContato" novalidate>
+      <label for="nome">Nome</label><input id="nome" required>
+      <label for="emailC">E-mail</label><input id="emailC" type="email" required>
+      <label for="msg">Mensagem</label><textarea id="msg" rows="4" required></textarea>
+      <button class="btn" type="submit">Enviar</button>
+      <p id="msgContato" role="status"></p>
+    </form>
+  </section>
+</main>
+
+<footer><p>© 2026 EstudaMais · Projeto de Desenvolvimento de Interfaces · <a href="#principal">Voltar ao topo</a></p></footer>
+<script src="script.js"></script>
+</body>
+</html>

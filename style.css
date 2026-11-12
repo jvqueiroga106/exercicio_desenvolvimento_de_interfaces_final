@@ -1,0 +1,27 @@
+:root{--bg:#fff;--tx:#1b1f2a;--pri:#1d4ed8;--ptx:#fff;--card:#f1f5f9;--bd:#cbd5e1;--err:#b91c1c;--fs:100%}
+[data-tema=escuro]{--bg:#0f172a;--tx:#e5e7eb;--pri:#93c5fd;--ptx:#0f172a;--card:#1e293b;--bd:#475569;--err:#fca5a5}
+[data-contraste=sim]{--bg:#000;--tx:#fff;--pri:#ffff00;--ptx:#000;--card:#000;--bd:#fff;--err:#ff8080}
+html{font-size:var(--fs);scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,Arial,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--pri);color:var(--ptx);padding:.5rem;z-index:9}
+header{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;padding:.75rem 1.5rem;border-bottom:2px solid var(--bd);position:sticky;top:0;background:var(--bg);z-index:5}
+nav a{margin-right:1rem;color:var(--tx);font-weight:600}
+a{color:var(--pri)}
+button,.btn{background:var(--pri);color:var(--ptx);border:2px solid var(--pri);border-radius:8px;padding:.5rem 1rem;font-size:1rem;cursor:pointer;text-decoration:none;display:inline-block}
+:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+main{max-width:900px;margin:auto;padding:0 1rem}
+section{padding:1.5rem 0}
+.hero{text-align:center;padding:3rem 1rem;background:var(--card);border-radius:12px;margin-top:1rem}
+aside{position:fixed;right:1rem;top:4.5rem;background:var(--card);border:2px solid var(--bd);padding:1rem;border-radius:12px;display:grid;gap:.5rem;z-index:8}
+aside[hidden]{display:none}.linha{display:flex;gap:.5rem}
+label{display:block;margin-top:.75rem;font-weight:600}
+input,textarea{width:100%;box-sizing:border-box;padding:.6rem;border:2px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font-size:1rem}
+.erro{color:var(--err)}
+.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:1rem}
+.carrossel{display:flex;align-items:center;gap:.5rem}.slides{flex:1}
+.slide{display:none;margin:0}.slide.ativo{display:block}.slide svg{width:100%;height:auto;border-radius:12px}
+figcaption{text-align:center;font-weight:600}
+[role=tablist]{display:flex;gap:.5rem;margin-bottom:.5rem}
+[role=tab][aria-selected=false]{background:var(--card);color:var(--tx);border-color:var(--bd)}
+footer{margin-top:2rem;padding:1rem;text-align:center;background:var(--card);border-top:2px solid var(--bd)}
